@@ -1,0 +1,15 @@
+{
+  "name": "nodetest1",
+  "version": "1.0.0",
+  "description": "Testing basic features of Cisco Messaging API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reza Kajbaf",
+  "license": "ISC",
+  "dependencies": {
+    "ciscospark": "^0.7.93",
+    "express": "^4.15.2"
+  }
+}
