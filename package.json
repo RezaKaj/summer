@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "ciscospark": "^0.7.93",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "node-webhooks": "^1.1.32"
   }
 }

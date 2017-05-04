@@ -1,13 +1,26 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
-  
+var request = require('request');
+var bodyParser = require('body-parser');
+
+
+
 var path = __dirname + '/views/';
   
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.use('/',router);
   
 router.get('/',function(req, res){
   res.sendFile(path + 'index.html');
+});
+
+router.post('/',function(req, res){
+  console.log("incoming message:", req.body);
+  // your code to do what ever you are supposed to do goes here
 });
   
 router.get('/product',function(req, res){
@@ -18,6 +31,7 @@ router.get('/about',function(req, res){
 });
   
 app.use('*',function(req, res){
+  console.log("404 was hit!", req.url);
   res.send('Error 404: Not Found!');
 });
   
@@ -52,7 +66,8 @@ const ciscospark = require(`ciscospark`);
      console.log(msCredentials.roomId.log()); 
   });
   */
-  ciscospark.messages.create({markdown:'This is a test message from ciscospark.messages API',
+ ciscospark.messages.create({markdown:'This is a test message from ciscospark.messages API',
 
-    roomId:'Y2lzY29zcGFyazovL3VzL1JPT00vZGRlOTU2OTAtMmY1Mi0xMWU3LWEyYmMtNDc0YmQ1MjJkNTQ2'
+    roomId:'Y2lzY29zcGFyazovL3VzL1JPT00vOTZiMTI3ZjAtMmY2ZS0xMWU3LThjYzEtNzc5MzE0ZDVjMWUy'
   })
+ 
